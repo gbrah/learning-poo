@@ -8,9 +8,15 @@ actions:
     link: /overview/
     type: primary
 features:
-  - title: 1. Introduction
-    details:  
- 
+  - title: 1. POO
+    details:  Histoire, Objectifs, Principes, Encapsulation, Polymorphisme, Objet, La Classe
+  - title: 2. Fondamentaux JAVA...
+    details: Historique, Installation, Compilation, Les types primitifs, Initialisation et constantes, Structures de contrôles, Itérations, Tableaux...
+  - title: 3. POO avec Java
+    details: La Classe, La classe statique, L’Objet, Instanciation, Constructeur, Methode principale, Affichage console, La modélisation, Héritage, Abstraction, Interface
+  - title: 4. Plus loin avec JAVA
+    details: Collections, Énumérations, Logs et debugging, Packaging et visibilité, Exception, Concurrence, Appel HTTP Rest, GUI avec JavaFX
+
 footer: Worldline © 2023 | tech at Worldline
 ---
 
