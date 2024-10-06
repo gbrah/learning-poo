@@ -25,7 +25,9 @@ export default defineUserConfig({
         sidebar: [
           { text: 'Home', link: '/' },
           "/overview/",
-          "/java/"
+          "/basics/",
+          "/java/",
+          "/syntax/",
         ], 
   }),
 

@@ -1,46 +1,166 @@
-# JAVA
+# POO avec Java
 
-## Installation
-
-1. Install [JDK](https://jdk.java.net/archive/)
-2. Add BIN folder of the JDK to PATH variable `%JAVA_HOME%/bin`
-
-![path1](../assets/images/path1.jpg)
-![path2](../assets/images/path2.jpg)
+## La Classe : attributs et méthodes
 
 
-3. Compile with `javac filename.java` command
-4. Run your program with `java filename` command
 
 
-## Compilation
+### La classe statique
 
-![compilation](../assets/images/compilation.png)
+Une classe est dite statique si elle possède des méthodes statiques. Les méthodes statiques sont des méthodes qui peuvent être appelées sans créer d’instance d’une classe.
+
+Exemple :
 
 ```java
-C:\Users\user1>javac helloworld.java
-C:\Users\user1>dir
-helloworld.class
-helloworld.java
-C:\Users\user1>java helloworld
-Hello, World!
+public class Statique {
+    public static void exempleStatic() {
+        System.out.println("Static");
+    }
+    public static void main(String[] args) {    
+       Statique.exempleStatic(); // la methode statique est appelée sans créer d’instance de la classe
+    }
 ```
 
-## JVM
+## L’Objet 
 
-The Java Virtual Machine (JVM) is the runtime environment for the Java programming language. It is responsible for executing Java bytecode. The JVM is a virtual machine that is implemented in Java itself. It permits the execution of Java programs on a wide range of platforms without the need for a separate native compiler or virtual machine. 
+### Instanciation
 
-![jvm](../assets/images/jvm.png)
+### Constructeur
+
+### Méthode principale 
+
+### Affichage console
+
+### La modélisation
+
+La modélisation est la représentation d’un concept ou d’une idée sous forme de diagrammes. Elle permet de décrire les relations entre les éléments d’un système et de leur représentation graphique. 
+
+L'`UML` est un langage de modélisation qui permet de décrire les concepts et les relations entre ces concepts. [Visual Paradigm](https://www.visual-paradigm.com/) est un outil de modélisation qui permet de créer des diagrammes UML.
+
+## Héritage 
+
+L'héritage est la notion de dériver des caractéristiques d'un objet d'un autre objet. 
+
+```java
+public class A {
+    private int a;
+    public int getA() {
+        return a;
+    }
+}
+
+public class B extends A {
+    private int b;
+    public int getB() {
+        return b;
+    }
+}
+```
+
+Dans l'exemple ci-dessus, l'objet B hérite de l'objet A. Il possède donc les mêmes caractéristiques que l'objet A.
+
+Pour accéder aux méthodes d'un objet hérité, on peut utiliser le mot-clé `super` :
+```java
+public class A {
+    private int a;
+    public int getA() {
+        return a;
+    }
+}
+
+public class B extends A {
+    private int b;
+    public int getB() {
+        return b;
+    }
+    public int getC() {
+        return super.getA() + b;
+    }
+}
+
+public static void main(String[] args) {
+    B b = new B();
+    b.getA(); // erreur
+    b.getB(); // ok
+    b.getC(); // ok
+}
+```
+
+le mot clef `override` permet de définir une méthode qui remplace une méthode héritée. 
+
+```java
+public class A {
+    private int a;
+    public int getA() {
+        return a;
+    }
+}
+
+public class B extends A {
+    private int b;
+    public int getB() {
+        return b;
+    }
+    public int getC() {
+        return super.getA() + b;
+    }
+}
+public class C extends B {
+    @Override
+    public int getC() {
+        return super.getC() + 1;
+    }
+}
+``` 
+## Abstraction
+
+L'abstraction est la notion de définir une classe abstraite qui ne contient pas de méthode. 
+```java
+abstract class A {
+    abstract int getA();
+}
+```
+
+On peut utiliser une classe abstraite comme classe de base pour définir une classe qui hérite de la classe abstraite.
+```java
+class B extends A {
+    @Override
+    public int getA() {
+        return 1;
+    }
+}
+```
+
+## Interface
+
+L'interface est une collection de méthodes, un contrat. Elle permet de définir les méthodes qui doivent être implémentées par un objet. Ces méthodes sont definis de manière abstraite et ne contiennent pas de code dans l'interface. Elles seront implémentées par les classes qui implémentent l'interface.
+
+```java
+public interface A {
+    int getA();
+}
+
+public class B implements A {
+    private int a;
+    public int getA() {
+        return a;
+    }
+}
+```
+
+Pour utiliser une interface, on peut créer un objet qui implémente l'interface.
+```java
+A a = new B();
+a.getA(); // ok
+```
+## 🧪 Modélisation d'une voiture
+## 🧪 Modélisation d'un parc de voitures
+## 🧪 Modélisation d'un Zoo
+## 🧪 Modélisation d'une école
+## 🧪 Modélisation d'un fastfood
+## 🧪 Projet d'application de Quiz
 
 
-## JavaSE
 
-Java SE is a set of software development tools and libraries that are used to develop applications for the Java platform. It includes the Java Development Kit (JDK), the Java Runtime Environment (JRE), and the Java Standard Edition (SE) APIs.
 
-![java](../assets/images/package.png)
 
-## Documentation
-
-Java documentation permits you to find information about the Java programming language, the Java SE API, and the Java SE environment. You can explore classes, methods, and other elements of the APIs, as well as the JDK and JRE.
-
-- [Java Documentation](https://devdocs.io/openjdk~21/)

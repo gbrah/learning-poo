@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 # POO
 
 ## Introduction
@@ -44,7 +52,22 @@
 
 ## Principes
 
-### l'Objet
+### Encapsulation
+L'encapsulation est la notion de séparer les parties d'un programme qui sont sensibles à des changements internes et qui doivent être modifiées sans modifier le reste du programme.
+
+Exemple : 
+- Un objet de type Voiture possède un attribut nombre de places
+- Un objet de type Personne possède un attribut nom
+- Un objet de type Personne possède une méthode qui renvoie le nombre de places occupées par cette personne
+
+### Polymorphisme
+
+Le polymorphisme est la capacité d'un objet à agir de différentes manières en fonction de son type. 
+
+Exemple :
+- Un objet de type Voiture possède une méthode qui renvoie le nombre de places occupées par cette voiture
+
+### Objet
 
 ![objet](../assets/images/objet.png)
 
@@ -71,7 +94,7 @@ Objet est défini par :
 - Un objet est une instance d’une classe 
 - Un programme OO est constitué de classes qui permettent de créer des objets qui s’envoient des messages
 
-## 🧪 Exercices
+## 🧪 Hello World
 
 - À l’aide de l’IDE en ligne [online GDB](www.onlinegdb.com)
 - Compilez votre première classe Voiture.

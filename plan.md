@@ -32,7 +32,6 @@ TP2: le Zoo
 TP3: Le parc de vehicule
 TP4: l'école
 
-Projet de Quiz
 
 
 la syntaxe java
@@ -48,8 +47,12 @@ Packaging
 Héritage ( classe object)
 Interface
 Abstraction
-
 Exception
-Introduction au Multi-Threading
-Introduction aux Interfaces Graphiques : Swing
+
+Projet de Quiz
+
+Réseau et multi-threading 
+Interfaces Graphiques 
+
+
 
