@@ -148,6 +148,8 @@ L'`UML` est un langage de modélisation qui permet de décrire les concepts et l
 
 ![paradigm](../assets/images/uml.png)
 
+## 🧪 Modélisation d'une voiture
+
 ## Héritage 
 
 L'héritage est la notion de dériver des caractéristiques d'un objet d'un autre objet. 
@@ -264,14 +266,149 @@ Pour utiliser une interface, on peut créer un objet qui implémente l'interface
 A a = new B();
 a.getA(); // ok
 ```
-## 🧪 Modélisation d'une voiture
+
 ## 🧪 Modélisation d'un parc de voitures
+
+Je souhaite gérer un `parc de vehicules`
+
+Ces `vehicules` peuvent être :
+* des 2 roues, 
+* des voitures 
+* ou des camions
+
+Un vehicule possède : 
+* Une immatriculation, 
+* un modèle, 
+* un prix argus, 
+* un kilométrage,
+* une date de mise 
+* une cylindré, 
+* un carburant , 
+* un etat ( neuf, quasi neuf, usagé), 
+* une liste des défauts, 
+* liste d'options
+
+Une voiture possède : 
+* un nombre de portes, 
+* une nombre de places, 
+* une taille de coffres
+
+Un vehicule doit pouvoir: 
+* se garer, 
+* demarrer, 
+* rouler
+
+La vitesse max d'une voiture une `180km/h`
+
+Une voiture implemente : 
+* accelerer, 
+* ralentir, 
+* afficher la vitesse
+
+Dans la simulation: 
+Le parc de vehicules s'appelle AutoPlus et possède 1 deux roues, deux voitures de votre choix et deux camions
+
 ## 🧪 Modélisation d'un Zoo
+
+Je souhaite modéliser le comportement des animaux d'un `Zoo`
+Un `animal` est caractérisé par : 
+* Un nom, 
+* Une taille,
+* Un age, 
+* Une durée de vie,
+* Un crie Un poids, 
+* Espece protégé, 
+* Espece éteinte
+
+Un animal doit pouvoir : 
+* Vieillir jusqu'à son age.
+* Crier
+
+J'ai 4 grandes familles d'animaux dans mon Zoo : Les reptiles, Les oiseaux,
+Les poissons, Les Mammifères
+
+Les Mamifères on la particularité :  
+* d'avoir un genre (male/femelle), 
+* un type de motricité (marcher/nager/)
+
+Les mamifères implémente :
+* Allaiter si c'est une femelle 3 fois par jours
+* Prodiguer des Soins parentaux 1 fois par jours
+
+Simulation : 
+* Vous simulez 100 années qui s'écoulent soit 100 fois 365 Jours et simulez la vie d'un mamifère (Crier , Vieillir, Allaiter, Prodiguer des soins)
+
 ## 🧪 Modélisation d'une école
+
+# Classe,Methodes, Constructeurs
+
+Une ecole est un ensemble de classes
+
+Une classe possède : 
+- un tableau, un retroprojecteur capable d'afficher un slide et de s'éteindre, On peut egalement 
+  passer au slides suivant/precedent 
+- un nombre de tables
+- un nombre de chaises
+
+Une salle de cours peut : sonner la recreation, lancer la projection
+
+Les salles peuvent etre : des classes, une salle de pause ou de reunion
+
+L'école possède des climatisations reversibles mobile cable de chauffer/rafraichir la salle à une temperature de 21°
+Elles sont actuellement uniquement en salle de pause et de reunion
+
+
+Simulation :
+ l'école `MySchool` possède 5 classes de cours 
+
+
 ## 🧪 Modélisation d'un fastfood
+
+Je souhaite modéliser un Fastfood . Un Fastfood posède : 
+* des Tables
+* des Chaises
+* Une cuisine . Dans cette cuisine il y a : desverres, des fourchette, des couteau, des assiette, une gazinière, un micro-onde
+
+Chaque Fastfood est capable de : 
+* cuire des aliments (Différents selon les types de fastfood)
+
+
+Un fastfood peut etre :
+* Une Pizerria
+* Un kebab
+* Un Barre à Salade 
+* Une Sandwicherie
+* Un spécialiste du Burger
+
+
+Une pizerria possède Un four
+* un meuble a ingrédients
+* Une liste de pizza à la carte
+
+
+Une pizerria peut occasionnellement implementer une salle de fête :
+* gerer une sonorisation 
+* illuminer la salle 
+* décorer la salle
+
 ## 🧪 Projet d'application de Quiz
 
+1. Modéliser une application qui permet de faire un quiz a l'aide de l'UML. 
 
+Voici comment s'utilise l'application de quiz shell : 
+```shell
+./quiz.sh
+1. Quelle est la couleur du cheval blanc d\'Henri IV ?
+a) Rouge
+b) Jaune
+c) Blanc
+--> votre réponse est : a
+Vous avez répondu correctement
+2. Quelle est la couleur du cheval bleu d'Henri VI ?
+```
+
+2. Faite valider votre modélisation avec le professeur.
+3. Réaliez votre application de quiz
 
 
 

@@ -1,19 +1,69 @@
 #  Fondamentaux JAVA
 
-## Historique
+## Historique 
+**1995 : Java 1.0**
+- **SDK** : Introduction du Java Development Kit (JDK) 1.0.
+- **Écosystème** : Lancement de Java par Sun Microsystems, conçu pour être portable, sécurisé et multithread.
 
+**1997 : Java 1.1**
+- **API** : Introduction de l'API JDBC pour l'accès aux bases de données et de l'API RMI pour la communication entre objets distants.
+
+**1998 : Java 2 (JDK 1.2)**
+- **SDK** : Renommé en Java 2 Platform, Standard Edition (J2SE).
+- **API** : Introduction des Collections Framework.
+- **Écosystème** : Expansion de Java avec les éditions Enterprise (J2EE) et Micro (J2ME).
+
+**2004 : Java 5 (JDK 1.5)**
+- **SDK** : Introduction des Generics, des Enums, et des annotations.
+- **API** : Ajout de l'API java.util.concurrent pour la programmation concurrente.
+
+**2006 : Java 6 (JDK 1.6)**
+- **Écosystème** : Java devient open source sous la licence GPL.
+
+**2011 : Java 7 (JDK 1.7)**
+- **SDK** : Introduction du Project Coin avec des améliorations syntaxiques.
+- **API** : Ajout de l'API NIO.2 pour une meilleure gestion des fichiers.
+
+**2014 : Java 8 (JDK 1.8)**
+- **SDK** : Introduction des expressions lambda et des Streams.
+- **API** : Ajout de l'API java.time pour la gestion des dates et heures.
+- **Écosystème** : Java 8 devient une version très populaire grâce à ses améliorations majeures.
+
+**2017 : Java 9 (JDK 9)**
+- **SDK** : Introduction du système de modules (Project Jigsaw).
+
+**2018 : Java 11 (JDK 11)**
+- **SDK** : Java devient un logiciel LTS (Long-Term Support).
+- **API** : Ajout de l'API HTTP Client.
+- **Écosystème** : Adoption de Java 11 comme version LTS par de nombreuses entreprises.
+
+**2021 : Java 17 (JDK 17)**
+- **SDK** : Version LTS avec de nombreuses améliorations de performance.
+- **API** : Ajout de l'API Foreign Function & Memory (en preview).
+- **Écosystème** : Adoption massive de Java 17 comme version LTS.
+
+**2023 : Java 21 (JDK 21)**
+- **SDK** : Version LTS avec de nombreuses améliorations de performance.
+- **API** : Ajout de l'API Pattern Matching pour les switch.
+- **Écosystème** : Adoption massive de Java 21 comme version LTS.
+- **Projet Loom** : Introduction des fibres légères (lightweight threads) pour une meilleure gestion de la concurrence.
+
+**2024 : Java 23 (JDK 23)**
+- **SDK** : Améliorations continues de la performance et de la sécurité.
+- **API** : Introduction de nouvelles fonctionnalités pour le traitement des données et l'IA.
+- **Écosystème** : Adoption croissante dans les domaines de l'IA et du machine learning, avec un soutien accru pour les frameworks modernes.
 
 ## Installation
 
-1. Install [JDK](https://jdk.java.net/archive/)
-2. Add BIN folder of the JDK to PATH variable `%JAVA_HOME%/bin`
+1. Installer [JDK] (https://jdk.java.net/archive/)
+2. Ajouter le dossier BIN du JDK à la variable PATH `%JAVA_HOME%/bin`.
 
 ![path1](../assets/images/path1.jpg)
 ![path2](../assets/images/path2.jpg)
 
 
-3. Compile with `javac filename.java` command
-4. Run your program with `java filename` command
+3. Compiler avec la commande `javac filename.java`.
+4. Exécutez votre programme avec la commande `java nomdufichier`.
 
 
 ## Compilation
@@ -31,20 +81,20 @@ Hello, World!
 
 ## JVM
 
-The Java Virtual Machine (JVM) is the runtime environment for the Java programming language. It is responsible for executing Java bytecode. The JVM is a virtual machine that is implemented in Java itself. It permits the execution of Java programs on a wide range of platforms without the need for a separate native compiler or virtual machine. 
+La machine virtuelle Java (JVM) est l'environnement d'exécution du langage de programmation Java. Elle est responsable de l'exécution du bytecode Java. La JVM est une machine virtuelle mise en œuvre dans le langage Java lui-même. Elle permet l'exécution de programmes Java sur un large éventail de plates-formes sans qu'il soit nécessaire de disposer d'un compilateur natif ou d'une machine virtuelle distincte. 
 
 ![jvm](../assets/images/jvm.png)
 
 
 ## JavaSE
 
-Java SE is a set of software development tools and libraries that are used to develop applications for the Java platform. It includes the Java Development Kit (JDK), the Java Runtime Environment (JRE), and the Java Standard Edition (SE) APIs.
+Java SE est un ensemble d'outils de développement de logiciels et de bibliothèques utilisés pour développer des applications pour la plate-forme Java. Il comprend le kit de développement Java (JDK), l'environnement d'exécution Java (JRE) et les API de l'édition standard Java (SE).
 
 ![java](../assets/images/package.png)
 
 ## Documentation
 
-Java documentation permits you to find information about the Java programming language, the Java SE API, and the Java SE environment. You can explore classes, methods, and other elements of the APIs, as well as the JDK and JRE.
+La documentation Java vous permet de trouver des informations sur le langage de programmation Java, l'API Java SE et l'environnement Java SE. Vous pouvez explorer les classes, les méthodes et d'autres éléments des API, ainsi que le JDK et le JRE.
 
 - [Java Documentation](https://devdocs.io/openjdk~21/)
 
