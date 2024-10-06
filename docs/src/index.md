@@ -1,8 +1,8 @@
 ---
 home: true
 heroImage: ./logo.png
-heroText: OOP with Java
-tagline: Discover Object Oriented Programming in practice.
+heroText: POO avec Java
+tagline: Découvrez comment développer des applications avec POO et Java
 actions:
   - text: Démarrer →
     link: /overview/
