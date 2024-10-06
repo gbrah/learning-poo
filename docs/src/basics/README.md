@@ -55,7 +55,7 @@
 
 ## Installation
 
-1. Installer [JDK] (https://jdk.java.net/archive/)
+1. Installer [JDK](https://jdk.java.net/archive/)
 2. Ajouter le dossier BIN du JDK à la variable PATH `%JAVA_HOME%/bin`.
 
 ![path1](../assets/images/path1.jpg)
