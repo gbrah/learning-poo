@@ -196,3 +196,9 @@ On peut initialiser un tableau à partir d'une liste d'éléments.
 ```java
 int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 ```
+
+## 📚 Lectures complémentaires
+
+- [Slides de cours de Mickael BARON](https://speakerdeck.com/mickaelbaron/programmation-orientee-objet-application-au-langage-java)
+
+
