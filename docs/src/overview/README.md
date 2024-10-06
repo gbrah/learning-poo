@@ -12,7 +12,7 @@
 
 ### Histoire
 
-#### 1960s
+#### 1970s
 
 ![xerox](../assets/images/xerox_8010.jpg)
 ![apple](../assets/images/apple_ii.jpg)
@@ -21,19 +21,14 @@
 - SmallTalk, « archétype » des langages objets 
 - Développement par Apple des premiers Mac 
 
-#### 1970s
+#### 1980s
 - Développement des ordinateurs personnels 
 - Intérêt pour les interfaces graphiques
 - Apparition de nouveaux langages tel que le  C++, extension de C
 
-
-#### 1980s
+#### 1990s
 - vers une maturité des concepts objets 
 - Standardisation de C++ 
-- Apparition de langages comme Java ou Python 
-
-
-#### 1990s
 
 ![netscape](../assets/images/netscape.png)
 
@@ -42,6 +37,7 @@
 - 1996 : NetscapeTM Navigator 2 incorpore une machine virtuelle Java 1.0 en version « beta » 
 - 1997 : Un premier pas vers une version industrielle Java 1.1 
 - 1999 : Version industrielle de Java 
+
 
 ### Objectifs
 

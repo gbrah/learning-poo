@@ -62,6 +62,20 @@ En java, les types primitifs sont les suivants :
 - `long` : représente un long
 - `float` : représente un flottant  
 
+Chacun des types simples possède un alter-ego objet disposant de méthodes de conversion identifiable grâce à sa majuscule 
+Ex : le type primitif « float » a pour équivalent objet « Float ».
+
+```java
+float f = 1.0f;
+Float f2 = f;
+f2.intValue(); // 1
+```
+
+Une variable en java est par convention déclarée avec une minuscule.
+```java
+int exempleOfInt = 10;
+```
+
 ## Initialisation et constantes
 
 Pour déclarer une variable, il faut d'abord la déclarer. 
