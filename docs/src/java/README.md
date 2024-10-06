@@ -150,6 +150,27 @@ L'`UML` est un langage de modélisation qui permet de décrire les concepts et l
 
 ## 🧪 Modélisation d'une voiture
 
+Modelisez une voiture en Java.
+Une voiture possède : 
+* Puissance, 
+* Est-elle demarrée, 
+* Vitesse
+* Un reservoir de carburant
+* une immatriculation
+* 4 phares avant et arrière
+* des freins
+
+Une voiture doit pouvoir : 
+* Demarrer, 
+* Accelerer, 
+* Ralentir
+* Freiner
+* Allumer ses phares
+* éteindre ses phares 
+
+Simulation: 
+Je souhaite creer 4 voitures de différentes puissances et simuler leur démarrage, accélération, ralentissement, freinage, allumage et éteindre des phares
+
 ## Héritage 
 
 L'héritage est la notion de dériver des caractéristiques d'un objet d'un autre objet. 
