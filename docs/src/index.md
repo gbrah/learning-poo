@@ -4,7 +4,7 @@ heroImage: ./logo.png
 heroText: OOP with Java
 tagline: Discover Object Oriented Programming in practice.
 actions:
-  - text: Start →
+  - text: Démarrer →
     link: /overview/
     type: primary
 features:
