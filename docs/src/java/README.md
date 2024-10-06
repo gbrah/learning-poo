@@ -340,8 +340,6 @@ Simulation :
 
 ## 🧪 Modélisation d'une école
 
-# Classe,Methodes, Constructeurs
-
 Une ecole est un ensemble de classes
 
 Une classe possède : 
