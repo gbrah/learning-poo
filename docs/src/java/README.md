@@ -46,9 +46,9 @@ Les `attributs` sont des variables qui sont stockées dans une classe.
 Les `méthodes` sont des fonctions qui sont stockées dans une classe.
 
 
-### La classe statique
+###  Methode statique
 
-Une classe est dite statique si elle possède des méthodes statiques. Les méthodes statiques sont des méthodes qui peuvent être appelées sans créer d’instance d’une classe.
+ Les méthodes statiques sont des méthodes qui peuvent être appelées sans créer d’instance d’une classe.
 
 Exemple :
 
@@ -82,9 +82,9 @@ On a utilisé le constructeur par défaut sans paramètre :
 ```java
     public static void main(String[] args) {
         Voiture audi = new Voiture(); // Instanciation
-        voiture.demarre();
-        voiture.deQuelPuissance();
-        voiture.accelere(10);
+        audi.demarre();
+        audi.deQuelPuissance();
+        audi.accelere(10);
     }
 ```
 
