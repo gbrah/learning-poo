@@ -441,7 +441,7 @@ Un vehicule possède :
 * un modèle, 
 * un prix argus, 
 * un kilométrage,
-* une date de mise 
+* une date de mise en circulation
 * une cylindré, 
 * un carburant , 
 * un etat ( neuf, quasi neuf, usagé), 
