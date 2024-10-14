@@ -171,6 +171,145 @@ Une voiture doit pouvoir :
 Simulation: 
 Je souhaite creer 4 voitures de différentes puissances et simuler leur démarrage, accélération, ralentissement, freinage, allumage et éteindre des phares
 
+::: details Solution
+
+Main.java
+```java
+public class Main {
+    public static void main(String[] args) {
+        VoitureCorrection[] voitures = {
+            new Voiture(100, "AB123CD", 50),
+            new Voiture(200, "EF456GH", 60),
+            new Voiture(300, "IJ789KL", 70),
+            new Voiture(400, "MN101OP", 80)
+        };
+        for(VoitureCorrection voiture : voitures) {
+            voiture.demarrer();
+            voiture.accelerer();
+            voiture.freiner();
+            voiture.ralentir();
+            voiture.allumerPhares();
+            voiture.eteindrePhares();
+        }
+    }
+}
+```
+
+Voiture.java
+```java
+public class Voiture {
+    Integer puissance;
+    Boolean estDemarree;
+    Integer vitesse;
+    String immatriculation;
+    Integer reservoirEnLitres;
+    Boolean[] phares = new Boolean[4];
+    Boolean[] freinsAvantArriere = new Boolean[2];
+
+    VoitureCorrection(Integer puissance, String immatriculation, Integer reservoirEnLitres){
+        this.puissance = puissance;
+        estDemarree = false;
+        vitesse = 0;
+        phares[0] = false;
+        phares[1] = false;
+        phares[2] = false;
+        phares[3] = false;
+        freinsAvantArriere[0] = false;
+        freinsAvantArriere[1] = false;
+        this.immatriculation = immatriculation;
+        this.reservoirEnLitres = reservoirEnLitres;
+
+    }
+
+    public void demarrer() {
+        if(estDemarree) {
+            printVoiture("La voiture est déjà démarrée");
+            return;
+        }
+        estDemarree = true;
+        printVoiture("La voiture démarre");
+    }
+
+    public void accelerer() {
+
+        if(!estDemarree) {
+            printVoiture("La voiture n'est pas démarrée");
+            return;
+        }
+
+        if(vitesse < 200) {
+            vitesse += 10;
+            printVoiture("La voiture accélère. Elle est a " + vitesse + " km/h");
+            return;
+        }
+        printVoiture("La voiture est déjà à sa vitesse maximale");
+
+    }
+
+    public void ralentir() {
+        if(!estDemarree) {
+            printVoiture("La voiture n'est pas démarrée");
+            return;
+        }
+        if(vitesse > 0) {
+            vitesse -= 10;
+            printVoiture("La voiture ralentit. Elle est a " + vitesse + " km/h");
+            return;
+        }
+        printVoiture("La voiture est déjà à l'arrêt");
+
+    }
+
+    public void freiner() {
+        if(!estDemarree) {
+            printVoiture("La voiture n'est pas démarrée");
+            return;
+        }
+        freinsAvantArriere[0] = true;
+        freinsAvantArriere[1] = true;
+        if(vitesse > 0) {
+            printVoiture("La voiture ralenti grâce aux freins");
+            vitesse -= 10;
+        }else {
+            printVoiture("La voiture ne ralenti pas car elle est déjà à l'arrêt");
+        }
+        freinsAvantArriere[0] = false;
+        freinsAvantArriere[1] = false;
+    }
+
+    public void allumerPhares() {
+        if(phares[0] && phares[1] && phares[2] && phares[3]) {
+            printVoiture("Les phares sont déjà allumés");
+            return;
+        }
+        phares[0] = true;
+        phares[1] = true;
+        phares[2] = true;
+        phares[3] = true;
+
+        printVoiture("Les phares sont allumés");
+    }
+    public void eteindrePhares() {
+        if(!phares[0] && !phares[1] && !phares[2] && !phares[3]) {
+            printVoiture("Les phares sont déjà éteints");
+            return;
+        }
+        phares[0] = false;
+        phares[1] = false;
+        phares[2] = false;
+        phares[3] = false;
+        printVoiture("Les phares sont éteints");
+    }
+
+    public void printVoiture(String message){
+        System.out.println("Voiture " + immatriculation + " : " + message);
+    }
+
+}
+```
+
+:::
+
 ## Héritage 
 
 L'héritage est la notion de dériver des caractéristiques d'un objet d'un autre objet. 
