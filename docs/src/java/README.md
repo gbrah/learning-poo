@@ -177,13 +177,13 @@ Main.java
 ```java
 public class Main {
     public static void main(String[] args) {
-        VoitureCorrection[] voitures = {
+        Voiture[] voitures = {
             new Voiture(100, "AB123CD", 50),
             new Voiture(200, "EF456GH", 60),
             new Voiture(300, "IJ789KL", 70),
             new Voiture(400, "MN101OP", 80)
         };
-        for(VoitureCorrection voiture : voitures) {
+        for(Voiture voiture : voitures) {
             voiture.demarrer();
             voiture.accelerer();
             voiture.freiner();
@@ -206,7 +206,7 @@ public class Voiture {
     Boolean[] phares = new Boolean[4];
     Boolean[] freinsAvantArriere = new Boolean[2];
 
-    VoitureCorrection(Integer puissance, String immatriculation, Integer reservoirEnLitres){
+    Voiture(Integer puissance, String immatriculation, Integer reservoirEnLitres){
         this.puissance = puissance;
         estDemarree = false;
         vitesse = 0;
