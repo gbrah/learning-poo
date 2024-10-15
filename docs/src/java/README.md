@@ -468,6 +468,166 @@ Une voiture implemente :
 Dans la simulation: 
 Le parc de vehicules s'appelle AutoPlus et possède 1 deux roues, deux voitures de votre choix et deux camions
 
+::: details Solution
+
+Main.java
+```java
+import java.util.Date;
+
+public class Vehicule {
+
+    enum Etat {
+        NEUF,
+        QUASI_NEUF,
+        USAGE,
+    }
+
+    String immatriculation;
+    String modele;
+    Integer PrixArgus;
+    Integer Kilometrage;
+    Date dateMiseEnCirculation;
+    Integer cylindree;
+    String carburant;
+    Etat etat;
+    String[] listeDefauts;
+    String[] listeOptions;
+    Boolean estGare;
+
+    public Vehicule(String immatriculation, String modele, Integer prixArgus, Integer kilometrage, Date dateMiseEnCirculation, Integer cylindree, String carburant, Etat etat, String[] listeDefauts, String[] listeOptions) {
+        this.immatriculation = immatriculation;
+        this.modele = modele;
+        PrixArgus = prixArgus;
+        Kilometrage = kilometrage;
+        this.dateMiseEnCirculation = dateMiseEnCirculation;
+        this.cylindree = cylindree;
+        this.carburant = carburant;
+        this.etat = etat;
+        this.listeDefauts = listeDefauts;
+        this.listeOptions = listeOptions;
+        this.estGare = false;
+    }
+
+    public void seGarer() {
+        System.out.println("Je me gare");
+        this.estGare = true;
+    }
+
+    public void demarrer() {
+        System.out.println("Je démarre");
+        this.estGare = false;
+    }
+    public void rouler(Integer vitesse) {
+        System.out.println("Je roule à " + vitesse + " km/h");
+    }
+}
+```
+
+Voiture.java
+```java
+import java.util.Date;
+
+public class Voiture extends Vehicule{
+
+    Integer nombreDePortes;
+    Integer nombreDePlaces;
+    Integer tailleDuCoffre;
+    final Integer vitesseMax = 180;
+
+    public Voiture(String immatriculation, String modele, Integer prixArgus, Integer kilometrage, Date dateMiseEnCirculation, Integer cylindree, String carburant, Etat etat, String[] listeDefauts, String[] listeOptions, Integer nombreDePortes, Integer nombreDePlaces, Integer tailleDuCoffre) {
+        super(immatriculation, modele, prixArgus, kilometrage, dateMiseEnCirculation, cylindree, carburant, etat, listeDefauts, listeOptions);
+        this.nombreDePortes = nombreDePortes;
+        this.nombreDePlaces = nombreDePlaces;
+        this.tailleDuCoffre = tailleDuCoffre;
+    }
+
+    @Override
+    public void rouler(Integer vitesse) {
+        if (vitesse <= vitesseMax) {
+            System.out.println("Je roule à " + vitesse + " km/h");
+        } else {
+            System.out.println("Je roule à " + vitesseMax + " km/h");
+        }
+    }
+
+
+}
+```
+
+DeuxRoues.java
+```java
+import java.util.Date;
+
+public class DeuxRoues extends Vehicule{
+    public DeuxRoues(String immatriculation, String modele, Integer prixArgus, Integer kilometrage, Date dateMiseEnCirculation, Integer cylindree, String carburant, Etat etat, String[] listeDefauts, String[] listeOptions) {
+        super(immatriculation, modele, prixArgus, kilometrage, dateMiseEnCirculation, cylindree, carburant, etat, listeDefauts, listeOptions);
+    }
+}
+```
+
+Camion.java
+``` java
+import java.util.Date;
+
+public class Camion extends Vehicule{
+
+    public Camion(String immatriculation, String modele, Integer prixArgus, Integer kilometrage, Date dateMiseEnCirculation, Integer cylindree, String carburant, Etat etat, String[] listeDefauts, String[] listeOptions) {
+        super(immatriculation, modele, prixArgus, kilometrage, dateMiseEnCirculation, cylindree, carburant, etat, listeDefauts, listeOptions);
+    }
+}
+```
+
+Main.java
+```java
+import java.util.Date;
+
+public class Main {
+    public static void main(String[] args) {
+
+        DeuxRoues moto = new DeuxRoues("1234", "Yamaha", 1000, 1000, new Date(), 100, "Essence", Vehicule.Etat.NEUF, new String[]{"Pneu crevé"}, new String[]{"ABS"});
+        Voiture voiture1= new Voiture("1234", "Peugeot", 1000, 1000, new Date(), 100, "Essence", Vehicule.Etat.NEUF, new String[]{"Pneu crevé"}, new String[]{"ABS"}, 5, 5, 500);
+        Voiture voiture2= new Voiture("1234", "Peugeot", 1000, 1000, new Date(), 100, "Essence", Vehicule.Etat.NEUF, new String[]{"Pneu crevé"}, new String[]{"ABS"}, 5, 5, 500);
+        Camion camion1 = new Camion("1234", "Peugeot", 1000, 1000, new Date(), 100, "Essence", Vehicule.Etat.NEUF, new String[]{"Pneu crevé"}, new String[]{"ABS"});
+        Camion camion2 = new Camion("1234", "Peugeot", 1000, 1000, new Date(), 100, "Essence", Vehicule.Etat.NEUF, new String[]{"Pneu crevé"}, new String[]{"ABS"});
+
+        ParcDeVehicule autoPlus = new ParcDeVehicule("AutoPlus", new Vehicule[]{moto, voiture1, voiture2, camion1, camion2});
+
+        System.out.println(autoPlus.toString());
+        
+        autoPlus.vehicules[0].rouler(230);
+        autoPlus.vehicules[1].rouler(200);
+    }
+}
+```
+
+ParcDeVehicule.java 
+``` java
+import java.util.Arrays;
+
+public class ParcDeVehicule {
+    String name;
+    Vehicule[] vehicules;
+
+    public ParcDeVehicule(String name, Vehicule[] vehicules) {
+        this.name = name;
+        this.vehicules = vehicules;
+    }
+
+    @Override
+    public String toString() {
+        return "ParcDeVehicule{" +
+                "name='" + name + '\'' +
+                ", vehicules=" + Arrays.toString(vehicules) +
+                '}';
+    }
+
+
+}
+```
+
+
+:::
+
 ## 🧪 Modélisation d'un Zoo
 
 Je souhaite modéliser le comportement des animaux d'un `Zoo`
