@@ -188,6 +188,93 @@ public class A {
 }
 ```
 
+## Test et dépendances
+
+Les dépendances en Java sont des bibliothèques ou des modules externes que votre projet utilise pour ajouter des fonctionnalités supplémentaires. La gestion des dépendances est essentielle pour le développement de logiciels modernes, car elle permet de réutiliser du code existant et de simplifier le processus de développement.
+
+#### Gestion des Dépendances avec Gradle
+
+Gradle est un outil de construction flexible qui peut gérer les dépendances de votre projet Java. Il utilise des fichiers de configuration (`build.gradle`) pour définir les dépendances et les configurations du projet.
+
+1. **Créer un Nouveau Projet Gradle dans IntelliJ:**
+
+   - Ouvrez IntelliJ IDEA.
+   - Sélectionnez `File` > `New` > `Project`.
+   - Choisissez `Gradle` et cliquez sur `Next`.
+   - Configurez le projet en ajoutant le `GroupId`, `ArtifactId`, et `Version`.
+   - Cliquez sur `Finish`.
+
+2. **Configurer le fichier `build.gradle`:**
+
+   Le fichier `build.gradle` est utilisé pour gérer les dépendances. 
+   Voici un exemple de `build.gradle` avec une dépendance à la bibliothèque `JUnit` pour les tests unitaires.
+
+   ```groovy
+   plugins {
+       id 'java'
+   }
+
+   group 'com.example'
+   version '1.0-SNAPSHOT'
+
+   repositories {
+       mavenCentral()
+   }
+
+   dependencies {
+       testImplementation 'junit:junit:4.13.2'
+   }
+
+   test {
+       useJUnitPlatform()
+   }
+   ```
+
+3. **Ajouter du Code au Projet:**
+
+   Créez une classe Java et un test unitaire pour démontrer l'utilisation de la dépendance `JUnit`.
+
+   ```java
+   // src/main/java/com/example/MonApplication.java
+   package com.example;
+
+   public class MonApplication {
+       public int additionner(int a, int b) {
+           return a + b;
+       }
+
+       public static void main(String[] args) {
+           MonApplication app = new MonApplication();
+           System.out.println("Résultat: " + app.additionner(2, 3));
+       }
+   }
+   ```
+
+   ```java
+   // src/test/java/com/example/MonApplicationTest.java
+   package com.example;
+
+   import org.junit.Test;
+   import static org.junit.Assert.assertEquals;
+
+   public class MonApplicationTest {
+       @Test
+       public void testAdditionner() {
+           MonApplication app = new MonApplication();
+           assertEquals(5, app.additionner(2, 3));
+       }
+   }
+   ```
+
+4. **Exécuter le Projet et les Tests:**
+
+   - Pour exécuter l'application principale, faites un clic droit sur `MonApplication.java` et sélectionnez `Run 'MonApplication.main()'`.
+   - Pour exécuter les tests, faites un clic droit sur `MonApplicationTest.java` et sélectionnez `Run 'MonApplicationTest'`.
+
+En suivant ces étapes, vous avez configuré un projet IntelliJ standard avec Gradle pour gérer les dépendances, et vous avez ajouté une dépendance à `JUnit` pour les tests unitaires.
+
+
+
 ## Concurrence
 
 L'asynchrone est la notion de définir des tâches qui ne sont pas bloquantes. 

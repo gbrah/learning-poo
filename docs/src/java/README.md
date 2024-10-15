@@ -138,6 +138,41 @@ public class Main {
 }
 ```
 
+### Transtypage 
+Le transtypage, ou casting, est une technique en Java qui permet de convertir une variable d'un type de données à un autre. Cela peut être nécessaire lorsque vous travaillez avec des types de données différents et que vous devez les manipuler ensemble.
+
+Le transtypage d'objets complexes est souvent utilisé dans le contexte de l'héritage et des interfaces. En Java, vous pouvez convertir un objet d'une classe parente en un objet d'une classe enfant (transtypage descendant) ou vice versa (transtypage ascendant).
+
+```java
+
+class Animal {
+    public void faireDuBruit() {
+        System.out.println("L'animal fait du bruit");
+    }
+}
+
+class Chien extends Animal {
+    public void aboyer() {
+        System.out.println("Le chien aboie");
+    }
+}
+
+public class TranstypageObjetExample {
+    public static void main(String[] args) {
+        // Transtypage ascendant (implicite)
+        Animal animal = new Chien();
+        animal.faireDuBruit(); // Appelle la méthode de la classe parente
+
+        // Transtypage descendant (explicite)
+        if (animal instanceof Chien) {
+            Chien chien = (Chien) animal;
+            chien.aboyer(); // Appelle la méthode de la classe enfant
+        }
+    }
+}
+```
+Dans cet exemple, nous avons une classe Animal et une classe Chien qui hérite de Animal. Le transtypage ascendant est implicite et permet de traiter un Chien comme un Animal. Le transtypage descendant est explicite et nécessite une vérification avec instanceof pour s'assurer que l'objet peut être converti en type Chien avant d'appeler des méthodes spécifiques à la classe Chien.
+
 ### Affichage console
 
 ### La modélisation
@@ -527,7 +562,7 @@ Voiture.java
 ```java
 import java.util.Date;
 
-public class Voiture extends Vehicule{
+public class Voiture extends Vehicule  implements GestionDeVitesseImpl{
 
     Integer nombreDePortes;
     Integer nombreDePlaces;
@@ -544,10 +579,41 @@ public class Voiture extends Vehicule{
     @Override
     public void rouler(Integer vitesse) {
         if (vitesse <= vitesseMax) {
-            System.out.println("Je roule à " + vitesse + " km/h");
+            afficherVitesse();
         } else {
-            System.out.println("Je roule à " + vitesseMax + " km/h");
+            afficherVitesse();
         }
+    }
+
+
+    @Override
+    public void accelerer(Integer ajoutVitesse) {
+        if(vitesse + ajoutVitesse <= vitesseMax) {
+            vitesse += ajoutVitesse;
+            afficherVitesse();
+        } else {
+            vitesse = vitesseMax;
+            afficherVitesse();
+        }
+
+    }
+
+    @Override
+    public void ralentir(Integer ajoutVitesse) {
+        if(vitesse - ajoutVitesse >= 0) {
+            vitesse -= ajoutVitesse;
+            afficherVitesse();
+        } else {
+            vitesse = 0;
+            afficherVitesse();
+        }
+
+    }
+
+    @Override
+    public void afficherVitesse() {
+        System.out.println("Je roule à " + vitesse + " km/h");
+
     }
 
 
@@ -624,6 +690,16 @@ public class ParcDeVehicule {
 
 }
 ```
+GestionDeVitesseImpl.java
+```java
+public interface GestionDeVitesseImpl {
+
+    public void accelerer(Integer ajoutVitesse);
+    public void ralentir(Integer ajoutVitesse);
+    public void afficherVitesse();
+}
+```
+
 
 
 :::
