@@ -939,6 +939,8 @@ Elles sont actuellement uniquement en salle de pause et de reunion
 Simulation :
  l'école `MySchool` possède 5 classes de cours 
 
+::: details Solution
+
  Main.java
 ```java
 
