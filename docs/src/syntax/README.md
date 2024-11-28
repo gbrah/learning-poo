@@ -31,10 +31,34 @@ List<Integer> a = new ArrayList<Integer>();
 
 Un itérateur permet de parcourir une collection.
 ```java
-Itérateur<Integer> it = a.iterator();
-while (it.hasNext()) {
-    System.out.println(it.next());
-}
+        List<String> list = new ArrayList<>();
+
+        list.add("Hello");
+        list.add("world");
+        String element = list.get(1);
+        System.out.println(element);
+        
+        Iterator<String> it = list.iterator();
+
+        while(it.hasNext()){
+            String elementcurrent = it.next();
+            System.out.println(elementcurrent);
+        }
+```
+
+On peut également utiliser une boucle `for` pour parcourir une collection.
+
+```
+        List<String> list = new ArrayList<>();
+
+        list.add("Hello");
+        list.add("world");
+        String element = list.get(1);
+        System.out.println(element);
+        
+        for(String elementcurrent : list){
+            System.out.println(elementcurrent);
+        }
 ```
 
 ## Énumérations
@@ -150,6 +174,7 @@ public static void main(String[] args) {
 }
 ```
 
+
 #### Propagation de l'exception
 
 Les exceptions peuvent être propagées à l'extérieur du programme. 
@@ -184,6 +209,37 @@ On peut ensuite utiliser cette exception dans le code.
 public class A {
     public void getA() throws A {
         throw new A();
+    }
+}
+```
+
+Autre exemple : 
+
+Creataion d'une exception personnalisée `DividedByZeroException` qui hérite de `Exception` et qui affiche un message d'erreur dans le cas ou on divise par zéro.
+```java
+public class DividedByZeroException extends Exception{
+    public DividedByZeroException() {
+        super("Divided by zero impossible");
+    }
+}
+```
+
+Levé de l'exception `DividedByZeroException` dans la méthode `divide` si le dénominateur est égal à zéro.
+```java
+public class Main {
+    public static void main(String[] args) {
+        try {
+            System.out.println(divide(1, 0));
+        } catch (DividedByZeroException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static int divide(int a, int b) throws DividedByZeroException {
+        if (b == 0) {
+            throw new DividedByZeroException();
+        }
+        return a / b;
     }
 }
 ```

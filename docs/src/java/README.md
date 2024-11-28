@@ -976,11 +976,93 @@ Une pizerria peut occasionnellement implementer une salle de fête :
 * illuminer la salle 
 * décorer la salle
 
-Main.java
+Fastfood.java
 ```java
+public abstract class Fastfood {
 
+    ArrayList<Integer> tables;
+    ArrayList<Integer> chaises;
+    Cuisine uneCuisine;
+
+    public abstract void  cuire();
+
+}
+```
+Cuisine.java
+```java
+public class Cuisine {
+    ArrayList<Integer> verres;
+    ArrayList<Integer> fourchettes;
+    ArrayList<Integer> couteaux;
+    ArrayList<Integer> assiettes;
+    Boolean gazinière;
+    Boolean microOnde;
+
+}
+```
+
+Pizzeria.java
+```java
+public class Pizerria extends Fastfood implements SalleDeFeteImpl {
+
+    boolean four;
+    ArrayList<String> meubleIngrédients;
+    ArrayList<String> pizzas;
+    public Pizerria() {
+        super();
+        this.uneCuisine.gazinière = true;
+        this.uneCuisine.microOnde = true;
+    }
+
+    public void cuire() {
+        System.out.println("Cuire une pizza");
+    }
+
+    @Override
+    public void gererSono() {
+       System.out.println("Gérer la sono");
+    }
+
+    @Override
+    public void illuminerSalle() {
+        System.out.println("Illuminer la salle");
+
+    }
+
+    @Override
+    public void decorerSalle() {
+        System.out.println("Décorer la salle");
+    }
+}
 
 ```
+
+SalleDeFeteImpl.java
+```java
+public interface SalleDeFeteImpl {
+
+
+
+    void gererSono();
+    void illumunerSalle();
+
+    void decorerSalle();
+}
+```
+
+Main.java
+```java
+public class Main {
+    public static void main(String[] args) {
+        Pizerria pizerria = new Pizerria();
+        pizerria.cuire();
+        pizerria.gererSono();
+        pizerria.illuminerSalle();
+        pizerria.decorerSalle();
+    }
+}
+```
+
 :::
 
 ## 🧪 Projet d'application de Quiz
