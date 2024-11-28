@@ -734,6 +734,190 @@ Les mamifères implémente :
 Simulation : 
 * Vous simulez 100 années qui s'écoulent soit 100 fois 365 Jours et simulez la vie d'un mamifère (Crier , Vieillir, Allaiter, Prodiguer des soins)
 
+::: details Solution
+
+Main.java
+```java
+public class Main {
+    public static void main(String[] args) {
+        Integer YEARS = 100;
+        Integer DAYS_COUNTER= 365;
+        Zoo zoo = new Zoo();
+        ArrayList<Animal> animals = zoo.getAnimals();
+
+        while(YEARS > 0){
+            while (DAYS_COUNTER > 0){
+                System.out.println("Days left for Year : "+YEARS +" => "+ DAYS_COUNTER);
+                for (Animal animal : animals) {
+                    animal.scream();
+                   if(animal instanceof Mammal){
+                       ((Mammal) animal).breastFeed();
+                       ((Mammal) animal).childCare();
+                       ((Mammal) animal).breastFeed();
+                       ((Mammal) animal).breastFeed();
+                   }
+                }
+                DAYS_COUNTER--;
+            }
+            for (Animal animal : animals) {
+                animal.gettingOlder(1);
+            }
+            YEARS--;
+            DAYS_COUNTER=365;
+        }
+        zoo.getAnimalInfo();
+    }
+}
+```
+
+Zoo.java
+```java
+public class Zoo {
+
+    ArrayList<Animal> animals = new ArrayList<Animal>();
+
+    public Zoo(){
+        animals.add(new Reptile("Crocodile", 5, 100, "Roar", 100, true, false));
+        animals.add(new Bird("Penguin", 1, 150, "Squawk", 5, true, false));
+        animals.add(new Fish("Goldfish", 1, 300, "Blub", 1, false, false));
+        animals.add(new Mammal(Mammal.MOTRICITY.QUADRUPEDAL, Mammal.GENDER.FEMALE,"Lion", 4, 10, "Roar", 200, true, false));
+    }
+
+    public ArrayList<Animal> getAnimals() {
+        return animals;
+    }
+    public void getAnimalInfo() {
+        for (Animal animal : animals) {
+            System.out.println("Name: " + animal.name);
+            System.out.println("Age: " + animal.age);
+            System.out.println("Size: " + animal.size);
+            System.out.println("Duration: " + animal.duration);
+            System.out.println("Scream: " + animal.scream);
+            System.out.println("Weight: " + animal.weight);
+            System.out.println("Protected by law: " + animal.protectedByLaw);
+            System.out.println("Extinct: " + animal.extinct);
+            System.out.println();
+        }
+    }
+}
+```
+
+Animal.java
+```java
+public class Animal {
+    String name;
+    Integer age;
+    Integer size;
+    Integer duration;
+    String scream;
+    Integer weight;
+    Boolean protectedByLaw;
+    Boolean extinct;
+
+    public Animal(String name, int size, int duration, String scream, Integer weight, Boolean protectedByLaw, Boolean extinct) {
+        this.name = name;
+        this.age = 0;
+        this.size = size;
+        this.duration = duration;
+        this.scream = scream;
+        this.weight = weight;
+        this.protectedByLaw = protectedByLaw;
+        this.extinct = extinct;
+    }
+
+    public void scream() {
+        System.out.println(this.scream);
+    }
+
+    public void gettingOlder(Integer years) {
+        if(age<=duration) this.age+=years;
+        else { System.out.println("I'm dead"); age=-1; };
+    }
+
+
+
+}
+```
+
+Bird.java
+```java
+public class Bird extends Animal {
+    public Bird(String name, int size, int duration, String scream, Integer weight, Boolean protectedByLaw, Boolean extinct) {
+        super(name, size, duration, scream, weight, protectedByLaw, extinct);
+    }
+}
+```
+
+Fish.java
+```java
+public class Fish extends Animal {
+    public Fish(String name, int size, int duration, String scream, Integer weight, Boolean protectedByLaw, Boolean extinct) {
+        super(name, size, duration, scream, weight, protectedByLaw, extinct);
+    }
+}
+
+```
+
+Reptile.java
+```java
+public class Reptile extends Animal {
+    public Reptile(String name, int size, int duration, String scream, Integer weight, Boolean protectedByLaw, Boolean extinct) {
+        super(name, size, duration, scream, weight, protectedByLaw, extinct);
+    }
+}
+```
+Mammal.java
+```java
+public class Mammal extends Animal implements breastFeedImpl, childCaringImpl {
+    enum GENDER{
+        MALE,
+        FEMALE
+    }
+    enum MOTRICITY{
+        BIPEDAL,
+        QUADRUPEDAL,
+        SWIMMING,
+        FLYING
+    }
+    GENDER gender;
+    MOTRICITY motricity;
+
+    public Mammal(MOTRICITY motricity,GENDER gender,String name, int size, int duration, String scream, Integer weight, Boolean protectedByLaw, Boolean extinct) {
+        super(name, size, duration, scream, weight, protectedByLaw, extinct);
+        this.gender=gender;
+        this.motricity=motricity;
+    }
+
+    @Override
+    public void breastFeed() {
+        if(gender.name() == GENDER.FEMALE.name())  System.out.println("I'm breast feeding");
+        else System.out.println("I'm not a Female");
+    }
+
+    @Override
+    public void childCare() {
+        System.out.println("I'm taking care of my child");
+    }
+}
+
+```
+
+breastFeedImpl.java
+```java
+public interface breastFeedImpl {
+    public void breastFeed();
+}
+```
+
+ChildCaringImpl.java
+```java
+public interface childCaringImpl {
+    public void childCare();
+}
+```
+
+:::
+
 ## 🧪 Modélisation d'une école
 
 Une ecole est un ensemble de classes
@@ -754,6 +938,13 @@ Elles sont actuellement uniquement en salle de pause et de reunion
 
 Simulation :
  l'école `MySchool` possède 5 classes de cours 
+
+ Main.java
+```java
+
+
+```
+:::
 
 
 ## 🧪 Modélisation d'un fastfood
@@ -784,6 +975,13 @@ Une pizerria peut occasionnellement implementer une salle de fête :
 * gerer une sonorisation 
 * illuminer la salle 
 * décorer la salle
+
+Main.java
+```java
+
+
+```
+:::
 
 ## 🧪 Projet d'application de Quiz
 
