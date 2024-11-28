@@ -978,6 +978,7 @@ Une pizerria peut occasionnellement implementer une salle de fête :
 * illuminer la salle 
 * décorer la salle
 
+::: details Solution
 Fastfood.java
 ```java
 public abstract class Fastfood {
