@@ -1085,7 +1085,14 @@ Vous avez répondu correctement
 ```
 
 2. Faite valider votre modélisation avec le professeur.
-3. Réaliez votre application de quiz
+3. Réaliez votre application de quiz (12 points)
+4. Ajouter vos fonctionnalités (Score, Temps, Interface graphique, questions générées aléatoirement, avec l'IA, recupération depuis une API des questions, etc... soyez créatifs !) (8 points)
+
+::: details Solution
+Une exemple de modélisation UML de la base de l'application de quiz: 
+
+![quiz](https://github.com/gbrah/learning-poo/blob/74750c0c896f88c69bd762320d30d5bcd79d7484/others/quizz.png)
+:::
 
 
 
