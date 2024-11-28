@@ -1091,7 +1091,7 @@ Vous avez répondu correctement
 ::: details Solution
 Une exemple de modélisation UML de la base de l'application de quiz: 
 
-![quiz](https://github.com/gbrah/learning-poo/blob/74750c0c896f88c69bd762320d30d5bcd79d7484/others/quizz.png)
+![quiz](https://github.com/gbrah/learning-poo/blob/74750c0c896f88c69bd762320d30d5bcd79d7484/others/quizz.png?raw=true)
 :::
 
 
